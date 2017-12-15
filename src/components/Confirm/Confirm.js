@@ -1,5 +1,5 @@
 import Vue from 'Vue';
-import Toast from './Toast.vue';
+import Toast from './Confirm.vue';
 
 var toast = {};
 var toastVM = null;

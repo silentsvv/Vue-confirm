@@ -1,15 +1,17 @@
 <template>
-  <div id="toast" v-if="show">
-    <div class="toast">
-      <div class="toast__content">
-        {{content}}
-      </div>
-      <div class="toast__btn">
-        <span class="btn success" @click="sure">确定</span>
-        <span class="btn cancel" @click="cancel">取消</span>
+  <transition name='fade'>
+    <div id="toast" v-if="show" >
+      <div class="toast">
+        <div class="toast__content">
+          {{content}}
+        </div>
+        <div class="toast__btn">
+          <span class="btn success" @click="sure">确定</span>
+          <span class="btn cancel" @click="cancel">取消</span>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -67,5 +69,13 @@
         }
       }
     }
+  }
+  
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
   }
 </style>
